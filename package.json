@@ -1,7 +1,7 @@
 {
-  "name": "react-hw8",
+  "name": "react-hw20",
   "version": "0.1.0",
-  "homepage": "https://maksym-ryaboshapka.github.io/react-hw16/",
+  "homepage": "https://maksym-ryaboshapka.github.io/react-hw20/",
   "private": false,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
