@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTotal } from "../../hooks/use-total";
 
 import FeedbackOptions from "../FeedbackOptions/FeedbackOptions";
 import Statistics from "../Statistics/Statistics";
@@ -8,12 +9,10 @@ const Section = () => {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const countTotalFeedback = () => {
-    return good + neutral + bad;
-  };
+  const total = useTotal(good, neutral, bad);
 
   const countPositiveFeedbackPercentage = () => {
-    return Math.round((good / countTotalFeedback()) * 100);
+    return Math.round((good / total) * 100);
   };
 
   return (
@@ -27,7 +26,7 @@ const Section = () => {
         good={good}
         neutral={neutral}
         bad={bad}
-        total={countTotalFeedback()}
+        total={total}
         positivePercentage={
           isNaN(countPositiveFeedbackPercentage())
             ? 0

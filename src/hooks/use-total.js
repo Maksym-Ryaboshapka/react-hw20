@@ -1,0 +1,1 @@
+export const useTotal = (good, neutral, bad) => good + neutral + bad;
